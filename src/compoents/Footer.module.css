@@ -1,0 +1,10 @@
+.footer{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0d7795;
+    color: rgb(253, 253, 253);
+    box-shadow: rgba(8, 14, 183, 0.378) -2px 0px 10px 0px;
+}

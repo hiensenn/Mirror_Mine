@@ -1,0 +1,45 @@
+.navbar {
+    display: flex;
+    box-shadow: rgba(8, 14, 183, 0.667) 0px -2px 10px 0px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 2em;
+    
+  }
+  
+  .brand {
+    font-size: 1.2em;
+    color: rgb(253, 253, 253);
+  }
+  .brand:hover{
+    color: rgb(104, 104, 104);
+  }
+  
+  .brand span {
+    font-weight: 900;
+    text-transform: uppercase;
+    color: rgb(253, 253, 253);
+  }
+  
+  .links_list {
+    display: flex;
+    list-style: none;
+  
+  }
+  
+  .links_list li {
+    margin-right: 1em;
+    
+  }
+  
+  .links_list li a {
+    padding: 0.4em 0.6em;
+    color: rgb(253, 253, 253);
+    box-shadow: rgba(8, 14, 183, 0.378) 0px -2px 10px 0px;
+    border-radius: 5px;
+  }
+  
+  .active{
+    background-color: #0d7795;
+    color: black;
+  }

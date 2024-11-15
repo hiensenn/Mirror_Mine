@@ -1,7 +1,10 @@
+
 .register{
+    width: 100%;
     text-align: center;
+    
 }
 
 .register p {
-    color: rgb(253, 253, 253);
+    color:  #0d7795;
 }

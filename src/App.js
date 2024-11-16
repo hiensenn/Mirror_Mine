@@ -1,12 +1,10 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
-
 
 //hooks
 import { useState, useEffect } from "react";
 import { useAuthentication } from "./hooks/useAuthentication";
-
 
 //pages
 import About from "./pages/About/About";
@@ -24,36 +22,46 @@ import NavBar from "./compoents/NavBar";
 import Footer from "./compoents/Footer";
 
 function App() {
+  const [user, setUser] = useState(undefined);
+  const { auth } = useAuthentication();
 
-  const[user, setUser] = useState(undefined)
-  const {auth} = useAuthentication()
-
-  const loadingUser = user === undefined
+  const loadingUser = user === undefined;
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      setUser(user)
-    })
-  }, [auth])
+      setUser(user);
+    });
+  }, [auth]);
 
-    if(loadingUser){
-      return <p>Carregando...</p>
-    }
-
+  if (loadingUser) {
+    return <p>Carregando...</p>;
+  }
 
   return (
     <div className="App">
-      <AuthProvider value={{user}}>
+      <AuthProvider value={{ user }}>
         <BrowserRouter>
           <NavBar />
           <div className="container">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/posts/create" element={<CreatePost />} />
-              <Route path="/dashboard" element={<DashBoard />} />
+              <Route
+                path="/login"
+                element={!user ? <Login /> : <Navigate to="/" />}
+              />
+              <Route
+                path="/register"
+                element={!user ? <Register /> : <Navigate to="/" />}
+              />
+              <Route
+                path="/posts/create"
+                element={user ? <CreatePost /> : <Navigate to="/login" />}
+              />
+              <Route
+                path="/dashboard"
+                element={user ? <DashBoard /> : <Navigate to="/login" />}
+              />
             </Routes>
           </div>
           <Footer />

@@ -58,7 +58,8 @@ const Register = () => {
             value={displayName}
             onChange={(e) => setDisplayName(e.target.value)}
           />
-
+        </label>
+        <label>
           <span>E-mail:</span>
           <input
             type="email"
@@ -68,7 +69,8 @@ const Register = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-
+          </label>
+          <label>
           <span>Senha:</span>
           <input
             type="password"
@@ -78,7 +80,8 @@ const Register = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-
+          </label>
+          <label>
           <span>Confirmação de senha:</span>
           <input
             type="password"

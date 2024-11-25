@@ -27,16 +27,14 @@ const CreatePost = () => {
       new URL(image);
     } catch (error) {
       setFormError("A imagem precisa ser uma URL.");
-      return //Interrompe o processo de envio se a URL for inválida
     }
 
     // create tags array
-    const tagsArray = tags.split(",").map((tag) => `#${tag.trim().toLowerCase()}`); // criando # antes de qualquer tag
+    const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
 
     // check values
     if (!title || !image || !tags || !body) {
       setFormError("Por favor, preencha todos os campos!");
-      return //Interrompe o envio caso algum campo esteja vazio
     }
 
     console.log(tagsArray);

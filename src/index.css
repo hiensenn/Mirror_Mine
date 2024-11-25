@@ -80,24 +80,24 @@ label{
   font-size: 1em;
  }
  .btn.btn-dark{
-  background-color: black;
+  background-color: #0d7795;
   border-radius: 0;
  }
 
  .btn.btn-outline{
-  background-color: transparent;
+  background-color: #0d7795;
   border-radius: 0;
-  color: black;
-  border: 1px solid #000;
+  color: white;
+  border: 1px solid #05c9ff;
   padding: 7px 30px;
  }
 
  .btn:hover{
   background-color: aliceblue;
-  color: bisque;
+  color: #0d7795ae;
  }
  .btn.btn-outline:hover{
-  background-color: violet;
+  background-color: #0d779569;
  }
  .btn.bn-danger:hover{
   background-color: red;

@@ -13,6 +13,8 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import DashBoard from "./pages/DashBoard/DashBoard";
 import CreatePost from "./pages/CreatePost/CreatePost";
+import Search from "./pages/Search/Search";
+
 
 //context
 import { AuthProvider } from "./context/AuthContext";
@@ -20,6 +22,7 @@ import { AuthProvider } from "./context/AuthContext";
 //Components
 import NavBar from "./compoents/NavBar";
 import Footer from "./compoents/Footer";
+
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -46,6 +49,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/search" element={<Search />} />
               <Route
                 path="/login"
                 element={!user ? <Login /> : <Navigate to="/" />}

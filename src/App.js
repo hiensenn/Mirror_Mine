@@ -20,8 +20,8 @@ import Search from "./pages/Search/Search";
 import { AuthProvider } from "./context/AuthContext";
 
 //Components
-import NavBar from "./compoents/NavBar";
-import Footer from "./compoents/Footer";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 
 function App() {

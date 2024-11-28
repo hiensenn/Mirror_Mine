@@ -23,7 +23,7 @@ const DashBoard = () => {
   }
 
   return (
-    <div>
+    <div className={styles.dashboard}>
         <h1>DashBoard</h1>
         <p>Gerencie os seus posts</p>
         {posts && posts.length === 0 ? (
@@ -31,11 +31,11 @@ const DashBoard = () => {
           
         ) : (
           <>
-          <div className={styles.posts}>
-            <p>seus posts : </p>
-            
+          <div className={styles.post_header}>
+            <span>Títulos</span>
+            <span>Ações</span>
           </div>
-          {posts && posts.map((post) => <div key={post.id}>
+          {posts && posts.map((post) => <div key={post.id} className={styles.post_row}>
              <p>{post.title}</p>
 
             <div>

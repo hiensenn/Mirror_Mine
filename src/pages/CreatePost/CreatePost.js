@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useInsertDocument } from "../../hooks/useInsertDocument";
 import { useNavigate } from "react-router-dom";
 import { useAuthValue } from "../../context/AuthContext";
-
+import { Link } from "react-router-dom";
 const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
@@ -112,6 +112,10 @@ const CreatePost = () => {
           />
         </label>
         {!response.loading && <button className="btn">Criar post!</button>}
+        <div className={styles.create_post_button}>
+        <Link to="/">Voltar</Link>
+        </div>
+        
         {response.loading && (
           <button className="btn" disabled>
             Aguarde.. .

@@ -1,11 +1,15 @@
 .create_post{
     text-align: center;
-
+    color: #0d7795;
+    margin-bottom: 2em;
 }
 .create_post h2{
     font-size:  2.2em;
 }
-.create_post {
-    color: #0d7795;
-    margin-bottom: 2em;
+
+.create_post_button{
+   
+    margin: 2em;
+    border-radius: 10%;
+   
 }

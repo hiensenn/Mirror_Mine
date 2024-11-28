@@ -15,6 +15,7 @@ import DashBoard from "./pages/DashBoard/DashBoard";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import Search from "./pages/Search/Search";
 import Post from "./pages/Post/Post";
+import EditPost from "./pages/EditPost/EditPost";
 
 //context
 import { AuthProvider } from "./context/AuthContext";
@@ -22,6 +23,7 @@ import { AuthProvider } from "./context/AuthContext";
 //Components
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+
 
 
 
@@ -59,6 +61,10 @@ function App() {
               <Route
                 path="/register"
                 element={!user ? <Register /> : <Navigate to="/" />}
+              />
+               <Route
+                path="/posts/edit/:id"
+                element={user ? <EditPost /> : <Navigate to="/login" />}
               />
               <Route
                 path="/posts/create"

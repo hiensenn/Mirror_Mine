@@ -4,7 +4,7 @@ import styles from './DashBoard.module.css'
 import { Link } from 'react-router-dom'
 import { useFetchDocuments } from '../../hooks/useFetchDocuments'
 import { useAuthValue } from '../../context/AuthContext'
-
+import { useDeleteDocument } from '../../hooks/useDeleteDocument'
 
 
 const DashBoard = () => {
@@ -15,12 +15,14 @@ const DashBoard = () => {
   //posts do usuario
   const {documents : posts, loading} = useFetchDocuments("posts", null, uid)
 
-  const deleteDocument = (id) => {
+  const {deleteDocument } = useDeleteDocument("posts")
+
+  
 
     if(loading){
       return <p>Carregando...</p>
     }
-  }
+  
 
   return (
     <div className={styles.dashboard}>
